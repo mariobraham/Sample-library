@@ -1,0 +1,30 @@
+<% if @books.blank? %>
+<div class="row justify-content-center mt-2">
+    <div class="card d-flex">
+        <div class="card-body text-center">
+        There are not any books currently in the system.
+        </div>
+    </div>
+</div>
+<% else %>
+<div class="row m-3 border shadow rounded p-3">
+    <table class="table mt-2 table-striped table-hover table-bordered border-primary">
+        <thead>
+            <tr >
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @books.each do |b| %>
+                <tr>
+                    <td><%= b.title %></td>
+                    <td><%= b.author %></td>
+                    <td><%= b.genre %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+<% end %>
